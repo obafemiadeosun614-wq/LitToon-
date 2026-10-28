@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LitToon - Home</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f8f9ff;margin:0}
+.header{background:#3b5bff;color:white;padding:20px;text-align:center}
+.search-box{background:white;padding:20px;margin:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+input[type=text]{width:100%;padding:14px;border-radius:10px;border:1px solid #ddd;font-size:16px;box-sizing:border-box}
+.book-card{background:white;padding:16px;margin:12px 0;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);cursor:pointer}
+.ad-box{background:#fff3cd;border:1px dashed #ffc107;padding:15px;margin:20px;text-align:center;border-radius:10px;color:#856404}
+</style>
+</head>
+<body>
+<div class="header">
+<h1 id="welcome">Welcome to LitToon</h1>
+<p>Search any literature text</p>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search e.g. Redemption Road or Redemption Road by Elma Shaw..." onkeyup="searchBooks()">
+</div>
+<div class="ad-box">AD SPACE 1 - Paste your Google AdSense code here later</div>
+<div class="book-list" id="bookList">Loading books...</div>
+<script>
+let allBooks=[];
+const name=localStorage.getItem('lt_name')||'Student';
+document.getElementById('welcome').innerText='Welcome, '+name+' - LitToon Library';
+fetch('data/books.json')
+.then(r=>r.json())
+.then(data=>{allBooks=data;displayBooks(data);})
+.catch(()=>{document.getElementById('bookList').innerText='Failed to load books.json - Make sure file is in data/books.json';});
+function displayBooks(books){
+ const list=document.getElementById('bookList');
+ list.innerHTML='';
+ books.forEach(book=>{
+   book.chapters.forEach(ch=>{
+     const div=document.createElement('div');
+     div.className='book-card';
+     div.innerHTML=`<strong>${book.title}</strong> by ${book.author}<br><small>${ch.title} - Click to read</small>`;
+     div.onclick=()=>{window.location.href=`book.html?book=${book.id}&chapter=${ch.chapter}`;};
+     list.appendChild(div);
+   });
+ });
+}
+function searchBooks(){
+ const q=document.getElementById('searchInput').value.toLowerCase().trim();
+ if(!q){displayBooks(allBooks);return;}
+ const filtered=[];
+ allBooks.forEach(book=>{
+   const inTitle=book.title.toLowerCase().includes(q);
+   const inAuthor=book.author.toLowerCase().includes(q);
+   const inKeywords=book.keywords.some(k=>k.toLowerCase().includes(q) || q.includes(k.toLowerCase()));
+   if(inTitle||inAuthor||inKeywords){filtered.push(book);}
+ });
+ displayBooks(filtered);
+}
+</script>
+</body>
+</html>
