@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LitToon - Chapter</title>
 <style>
-body{font-family:Arial,sans-serif;background:#f5f5f5;margin:0}
+body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;padding:0}
 .header{background:#3b5bff;color:white;padding:15px}
-.header a{color:white;text-decoration:none}
-.content{background:white;margin:15px;padding:20px;border-radius:8px}
-.ad-box{background:#fff3cd;border:1px dashed #ffcc00;padding:10px;margin:15px 0}
-.video-box{width:100%;max-width:700px;background:#000;border-radius:8px;overflow:hidden}
+.header a{color:white;text-decoration:none;font-weight:bold}
+.content{background:white;margin:15px;padding:20px;border-radius:10px;line-height:1.8}
+.ad-box{background:#fff3cd;border:1px dashed #ffc107;padding:15px;margin:15px 0;text-align:center}
+.video-box{width:100%;max-width:700px;background:#000;margin:15px 0;border-radius:10px;overflow:hidden}
 .video-box iframe{width:100%;height:340px;border:none}
 .video-box video{width:100%;height:340px}
-.meta{color:#666;font-size:14px;margin-bottom:15px}
+.meta{color:#666;font-size:14px;margin-bottom:8px}
+.summary-detailed{white-space:pre-wrap;text-align:justify;font-size:16px;color:#222}
+.summary-simple{margin-top:15px;padding:12px;background:#f9f9f9;border-left:4px solid #3b5bff}
 </style>
 </head>
 <body>
@@ -28,26 +30,32 @@ fetch('data/books.json')
 .then(r=>r.json())
 .then(allBooks=>{
   const {book,chapter}=getParams();
-  const bookData=allBooks.find(b=>b.id===book);
-  const chData=bookData.chapters.find(c=>c.chapter===chapter);
+  const bookData=allBooks.find(b=>b.id==book);
+  const chData=bookData.chapters.find(c=>c.chapter==chapter);
   const hasVideo=chData.video_id && chData.video_embed_url;
-  const isMp4 = chData.video_type === 'mp4' || (chData.video_embed_url && chData.video_embed_url.includes('.mp4'));
+  const isMp4 = chData.video_type === 'mp4' || (chData.cloudinary_url && chData.cloudinary_url.endsWith('.mp4'));
   const videoUrl = chData.cloudinary_url || chData.video_embed_url;
-  const videoEmbed = hasVideo ? (isMp4 
-    ? `<video controls playsinline><source src="${videoUrl}" type="video/mp4"></video>`
-    : `<iframe src="${chData.video_embed_url}" allowfullscreen></iframe>`) : '';
-  document.getElementById('content').innerHTML=`
-  <div class="meta">${bookData.type} | ${bookData.author}</div>
-  <h1>${bookData.title}</h1>
-  <h2>${chData.title}</h2>
-  <div class="meta">Characters: ${chData.characters}</div>
-  <div class="meta">Theme: ${chData.theme}</div>
-  <p>${chData.summary_simple}</p>
-  <div class="ad-box">AD SPACE 2 - Paste your ad here</div>
-  <h3>Video Lesson - Paused (Click Play)</h3>
-  ${hasVideo? `<div class="video-box">${videoEmbed}</div>` : ''}
-  <div class="ad-box">AD SPACE 3 - Paste your ad here</div>
-  `;
+  const videoEmbed = hasVideo ? (isMp4
+  ? `<video controls playsinline><source src="${videoUrl}" type="video/mp4"></video>`
+  : `<iframe src="${chData.video_embed_url}" allowfullscreen></iframe>`)
+  : '';
+document.getElementById('content').innerHTML=
+`<div class="meta">${bookData.type} | ${bookData.author} | ${bookData.title}</div>
+<h1>${bookData.title}</h1>
+<h2>${chData.title}</h2>
+<div class="meta">Characters: ${chData.characters ? chData.characters.join(', ') : ''}</div>
+<div class="meta">Theme: ${chData.theme || ''}</div>
+${chData.setting ? `<div class="meta">Setting: ${chData.setting}</div>` : ''}
+
+<p class="summary-detailed">${chData.summary_detailed ? chData.summary_detailed : chData.summary_simple}</p>
+
+<div class="summary-simple"><strong>Quick Summary:</strong> ${chData.summary_simple}</div>
+
+<div class="ad-box">AD SPACE 2 - Paste your ad here</div>
+<h3>Video Lesson - Play</h3>
+${hasVideo ? `<div class="video-box">${videoEmbed}</div>` : '<p>No video yet</p>'}
+<div class="ad-box">AD SPACE 3 - Paste your ad here</div>
+`;
 });
 </script>
 </body>
