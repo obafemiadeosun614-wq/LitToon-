@@ -1,39 +1,37 @@
 [
-  {
-    "id": "redemption-road-elma-shaw",
-    "title": "Redemption Road",
-    "author": "Elma Shaw",
-    "type": "Prose",
-    "keywords": ["redemption road", "redemption road by elma shaw", "elma shaw", "redemption road elma shaw", "redemption road chapter 1"],
-    "chapters": [
-      {
-        "chapter": 1,
-        "title": "Chapter 1 - The Memorial",
-        "summary_simple": "Chapter 1 begins at a memorial service for Catherine May Tyler Lewis, also called Granny May. She died almost ten years ago during the Liberian civil war and her body was never found. Her family holds a service with an empty casket containing her portrait, her Bible, family pictures, a picture of her husband Samuel Lewis II, a white rose, and the Liberian flag. The main character is Bendu Lewis, Granny May's granddaughter. Bendu is in deep pain because she was the last person to see her grandmother alive. She remembers how Granny May died. During the war, Bendu was pushing her sick grandmother in a dirty, rusty wheelbarrow as they escaped from Charlue Town. Everyone was running for their lives. People shouted at Bendu to leave the old woman and run. Along the road, she saw abandoned babies crying, small children being trampled, and old and sick people left behind crying for help. Bendu refused to leave her grandmother. She pushed until her hands had blisters. Finally, Granny May whispered, Leave me baby. Go. Save yourself. Bendu said she would never leave her. Then Granny May died. An old man told Bendu, You did well to stay with your Ma. God will bless you. Immediately after, about thirty rebel fighters appeared. They were not the official Liberian army. Their leaders were Commander Cobra and Samson. Bendu was tired of the war and wanted to die to join her late fiance Jonah. She was not afraid. The fighters mocked her and ordered her to follow them. When she refused, Samson hit her finger hard with his gun and broke it. The men dragged her away screaming. She fainted from pain, hunger and shock. When she woke up, it was dark and the fighters were setting up camp in the woods. Back at the memorial service, Bendu is surrounded by family and friends but she feels alone. She has a secret about her one year with the fighters and fears her family will not forgive her if they know.",
-        "characters": ["Bendu Lewis", "Granny May", "Benjamin Lewis", "Eva Lewis", "Commander Cobra", "Samson"],
-        "theme": "War trauma, family love, loss, survival, and forgiveness",
-        "setting": "Liberia - Memorial service and Charlue Town",
-        "video_id": "lv_0_20261029105645_1",
-"video_embed_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/q_auto,f_auto/v1793271463/lv_0_20261029105645_1.mp4",
-"video_type": "mp4",
-"cloudinary_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/v1793271463/lv_0_20261029105645_1.mp4"
-         
-  },
-  {
-      "chapter": 2,
-      "title": "Chapter 2 - In The Cause of The People",
-      "summary_simple": "Moses Varney arrives at the Temple of Justice in Monrovia. He meets a group of street boys including Simeon and Alphonso who call him 'Brother V' and 'father'. He remembers losing his parents at age 11 in a bus accident from Sanniquellie to Monrovia. He thinks about justice in Liberia and vows that things must change, then enters the Judiciary wing.",
-      "summary_detailed": "Moses Varney, with his driver/bodyguard Weah, parks at the Temple of Justice. His dashboard still bears the PRC slogan from the 1980 coup. He is stopped by teenage boys hanging near Capitol Bypass parking lot who know him as Brother V. Varney reflects on their situation - young, displaced and unemployed. This triggers his own childhood trauma - losing both parents in an overloaded minibus accident. His sisters were taken in by relatives and he was sent to his uncle in Monrovia, an experience that changed his life. Looking at Simeon's hopeful face, Varney promises 'I won't forget you'. He reflects on Liberia's system - where leaders are surprised by how bad the system is when they face it. He believes there can be no peace without equity and justice, and that the people must rise to liberate themselves. With determination, he knocks on a large ornate door in the Judiciary wing.",
-      "characters": ["Moses Varney", "Weah", "Simeon", "Alphonso", "President Doe (mentioned)"],
-      "theme": "Justice, Youth Unemployment, Childhood Trauma, Social Equity",
-      "setting": "Temple of Justice, Capitol Bypass, Monrovia, Liberia",
-      "moral_lesson": "True peace cannot exist without justice and equity for the masses.",
-      "video_id": "chapter2",
-      "video_embed_url": "PASTE_YOUR_CLOUDINARY_CHAPTER_2_LINK_HERE",
-      "video_type": "mp4",
-      "cloudinary_url": "PASTE_YOUR_CLOUDINARY_CHAPTER_2_LINK_HERE"
+    {
+        "id": "redemption-road-elma-shaw",
+        "title": "Redemption Road",
+        "author": "Elma Shaw",
+        "type": "Prose",
+        "keywords": ["redemption road", "elma shaw", "liberia"],
+        "chapters": [
+            {
+                "chapter": 1,
+                "title": "Chapter 1 - The Memorial",
+                "summary_simple": "Chapter 1 begins at a memorial service in Liberia. Bendu Lewis remembers family, loss, and Granny May.",
+                "characters": ["Bendu Lewis", "Granny May", "Benjamin"],
+                "theme": "War trauma, family love, loss",
+                "setting": "Liberia - Memorial service",
+                "video_id": "lv_0_20261029105645_1",
+                "video_embed_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/q_auto,f_auto/v1793271463/lv_0_20261029105645_1.mp4",
+                "video_type": "mp4",
+                "cloudinary_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/v1793271463/lv_0_20261029105645_1.mp4"
+            },
+            {
+                "chapter": 2,
+                "title": "Chapter 2 - In The Cause of The People",
+                "summary_simple": "Moses Varney arrives at the Temple of Justice. He meets street boys Simeon and Alphonso who call him Brother V.",
+                "summary_detailed": "Moses Varney with his bodyguard Weah parks at the Temple of Justice. He meets teenage boys near Capitol Bypass who know him as Brother V. He remembers losing his parents at age 11 in a bus accident from Sanniquellie to Monrovia. He reflects on justice in Liberia and promises he will not forget the boys.",
+                "characters": ["Moses Varney", "Weah", "Simeon", "Alphonso"],
+                "theme": "Justice, Youth Unemployment, Childhood Trauma",
+                "setting": "Temple of Justice, Capitol Bypass, Monrovia",
+                "moral_lesson": "True peace cannot exist without justice and equity for the masses.",
+                "video_id": "chapter2",
+                "video_embed_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/q_auto,f_auto/v1793271463/lv_0_20261029105645_1.mp4",
+                "video_type": "mp4",
+                "cloudinary_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/v1793271463/lv_0_20261029105645_1.mp4"
+            }
+        ]
     }
-    ]
-  }
 ]
-      
