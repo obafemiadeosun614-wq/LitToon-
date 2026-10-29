@@ -13,8 +13,11 @@
         "characters": ["Bendu Lewis", "Granny May", "Benjamin Lewis", "Eva Lewis", "Commander Cobra", "Samson"],
         "theme": "War trauma, family love, loss, survival, and forgiveness",
         "setting": "Liberia - Memorial service and Charlue Town",
-        "video_id": "PASTE_YOUTUBE_ID_HERE",
-        "video_embed_url": "https://www.youtube.com/embed/PASTE_YOUTUBE_ID_HERE"
+        "video_id": "lv_0_20261029105645_1",
+"video_embed_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/q_auto,f_auto/v1793271463/lv_0_20261029105645_1.mp4",
+"video_type": "mp4",
+"cloudinary_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/v1793271463/lv_0_20261029105645_1.mp4"
+        
       }
     ]
   }
