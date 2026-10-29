@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X2V5Q079QF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-X2V5Q079QF');
-</script>
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LitToon - Chapter</title>
 <style>
-body{font-family:Arial,sans-serif;background:#f8f9ff;margin:0;line-height:1.7}
-.header{background:#3b5bff;color:white;padding:15px;display:flex;align-items:center}
-.header a{color:white;text-decoration:none;margin-right:15px}
-.content{background:white;margin:15px;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
-.ad-box{background:#fff3cd;border:1px dashed #ffc107;padding:15px;margin:15px 0;text-align:center;border-radius:10px;color:#856404}
-.video-box{width:100%;max-width:700px;background:black;border-radius:12px;overflow:hidden;margin:15px auto}
+body{font-family:Arial,sans-serif;background:#f5f5f5;margin:0}
+.header{background:#3b5bff;color:white;padding:15px}
+.header a{color:white;text-decoration:none}
+.content{background:white;margin:15px;padding:20px;border-radius:8px}
+.ad-box{background:#fff3cd;border:1px dashed #ffcc00;padding:10px;margin:15px 0}
+.video-box{width:100%;max-width:700px;background:#000;border-radius:8px;overflow:hidden}
 .video-box iframe{width:100%;height:340px;border:none}
+.video-box video{width:100%;height:340px}
 .meta{color:#666;font-size:14px;margin-bottom:15px}
 </style>
 </head>
 <body>
-<div class="header"><a href="index.html">← Back</a><span>LitToon</span></div>
+<div class="header"><a href="index.html">← Back</a></div>
 <div class="content" id="content">Loading...</div>
 <script>
 function getParams(){
- const p=new URLSearchParams(window.location.search);
- return {book:p.get('book'),chapter:parseInt(p.get('chapter'))};
+  const p=new URLSearchParams(window.location.search);
+  return {book:p.get('book'),chapter:parseInt(p.get('chapter'))}
 }
 fetch('data/books.json')
 .then(r=>r.json())
 .then(allBooks=>{
- const {book,chapter}=getParams();
- const bookData=allBooks.find(b=>b.id===book);
- const chData=bookData.chapters.find(c=>c.chapter===chapter);
- const hasVideo=chData.video_id && chData.video_id!=='PASTE_YOUTUBE_ID_HERE';
- const videoEmbed=hasVideo?`https://www.youtube.com/embed/${chData.video_id}`:'';
- document.getElementById('content').innerHTML=`
-   <div class="meta">${bookData.type} | ${bookData.author}</div>
-   <h1>${bookData.title}</h1>
-   <h2>${chData.title}</h2>
-   <div class="meta">Characters: ${chData.characters.join(', ')}</div>
-   <div class="meta">Theme: ${chData.theme}</div>
-   <p>${chData.summary_simple}</p>
-   <div class="ad-box">AD SPACE 2 - Paste your Google AdSense code here</div>
-   <h3>Video Lesson - Paused (Click Play)</h3>
-   ${hasVideo?`<div class="video-box"><iframe src="${videoEmbed}" allowfullscreen></iframe></div>`:`<div class="ad-box" style="background:#e7f3ff;border-color:#3b5bff;color:#3b5bff">Video coming soon. Paste YouTube ID in books.json to show video here.</div>`}
-   <div class="ad-box">AD SPACE 3 - Paste your Google AdSense code here</div>
- `;
+  const {book,chapter}=getParams();
+  const bookData=allBooks.find(b=>b.id===book);
+  const chData=bookData.chapters.find(c=>c.chapter===chapter);
+  const hasVideo=chData.video_id && chData.video_embed_url;
+  const isMp4 = chData.video_type === 'mp4' || (chData.video_embed_url && chData.video_embed_url.includes('.mp4'));
+  const videoUrl = chData.cloudinary_url || chData.video_embed_url;
+  const videoEmbed = hasVideo ? (isMp4 
+    ? `<video controls playsinline><source src="${videoUrl}" type="video/mp4"></video>`
+    : `<iframe src="${chData.video_embed_url}" allowfullscreen></iframe>`) : '';
+  document.getElementById('content').innerHTML=`
+  <div class="meta">${bookData.type} | ${bookData.author}</div>
+  <h1>${bookData.title}</h1>
+  <h2>${chData.title}</h2>
+  <div class="meta">Characters: ${chData.characters}</div>
+  <div class="meta">Theme: ${chData.theme}</div>
+  <p>${chData.summary_simple}</p>
+  <div class="ad-box">AD SPACE 2 - Paste your ad here</div>
+  <h3>Video Lesson - Paused (Click Play)</h3>
+  ${hasVideo? `<div class="video-box">${videoEmbed}</div>` : ''}
+  <div class="ad-box">AD SPACE 3 - Paste your ad here</div>
+  `;
 });
 </script>
 </body>
