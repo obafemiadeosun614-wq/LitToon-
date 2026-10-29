@@ -17,8 +17,23 @@
 "video_embed_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/q_auto,f_auto/v1793271463/lv_0_20261029105645_1.mp4",
 "video_type": "mp4",
 "cloudinary_url": "https://res.cloudinary.com/hdnjnj1g/video/upload/v1793271463/lv_0_20261029105645_1.mp4"
-        
-      }
+         
+  },
+  {
+      "chapter": 2,
+      "title": "Chapter 2 - In The Cause of The People",
+      "summary_simple": "Moses Varney arrives at the Temple of Justice in Monrovia. He meets a group of street boys including Simeon and Alphonso who call him 'Brother V' and 'father'. He remembers losing his parents at age 11 in a bus accident from Sanniquellie to Monrovia. He thinks about justice in Liberia and vows that things must change, then enters the Judiciary wing.",
+      "summary_detailed": "Moses Varney, with his driver/bodyguard Weah, parks at the Temple of Justice. His dashboard still bears the PRC slogan from the 1980 coup. He is stopped by teenage boys hanging near Capitol Bypass parking lot who know him as Brother V. Varney reflects on their situation - young, displaced and unemployed. This triggers his own childhood trauma - losing both parents in an overloaded minibus accident. His sisters were taken in by relatives and he was sent to his uncle in Monrovia, an experience that changed his life. Looking at Simeon's hopeful face, Varney promises 'I won't forget you'. He reflects on Liberia's system - where leaders are surprised by how bad the system is when they face it. He believes there can be no peace without equity and justice, and that the people must rise to liberate themselves. With determination, he knocks on a large ornate door in the Judiciary wing.",
+      "characters": ["Moses Varney", "Weah", "Simeon", "Alphonso", "President Doe (mentioned)"],
+      "theme": "Justice, Youth Unemployment, Childhood Trauma, Social Equity",
+      "setting": "Temple of Justice, Capitol Bypass, Monrovia, Liberia",
+      "moral_lesson": "True peace cannot exist without justice and equity for the masses.",
+      "video_id": "chapter2",
+      "video_embed_url": "PASTE_YOUR_CLOUDINARY_CHAPTER_2_LINK_HERE",
+      "video_type": "mp4",
+      "cloudinary_url": "PASTE_YOUR_CLOUDINARY_CHAPTER_2_LINK_HERE"
+    }
     ]
   }
 ]
+      
