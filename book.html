@@ -3,74 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LitToon - Chapter</title>
+<title>Redemption Road - LitToon</title>
 <style>
-body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;padding:0}
-.header{background:#3b5bff;color:white;padding:15px}
-.header a{color:white;text-decoration:none;font-weight:bold}
-.content{background:white;margin:15px;padding:20px;border-radius:10px;line-height:1.8}
-.ad-box{background:#fff3cd;border:1px dashed #ffc107;padding:15px;margin:15px 0;text-align:center}
-.video-box{width:100%;max-width:700px;background:#000;margin:15px 0;border-radius:10px;overflow:hidden}
-.video-box iframe{width:100%;height:340px;border:none}
-.video-box video{width:100%;height:340px}
-.meta{color:#666;font-size:14px;margin-bottom:8px}
-.btn-full{background:#3b5bff;color:white;border:none;padding:12px 18px;border-radius:8px;font-size:15px;font-weight:bold;cursor:pointer;width:100%;margin:10px 0}
-.btn-full:active{transform:scale(0.98)}
-.summary-detailed{display:none;white-space:pre-wrap;text-align:justify;font-size:16px;color:#222;background:#f9fbff;padding:15px;border-radius:8px;border:1px solid #dbe2ff;margin-top:10px}
-.summary-simple{padding:12px;background:#f5f5f5;border-left:4px solid #3b5bff;margin:10px 0}
+html{ scroll-behavior: smooth; }
+*{ box-sizing: border-box; }
+body{ font-family: Inter, sans-serif; background:#fff; margin:0; color:#111; }
+.container{ max-width:800px; margin:0 auto; padding:15px; }
+.top-nav{ position:sticky; top:0; background:#fff; z-index:99; padding:12px 0; border-bottom:2px solid #eee; overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling: touch; }
+.top-nav::-webkit-scrollbar{ display:none; }
+.top-nav button{ margin:3px; padding:9px 15px; border-radius:20px; border:1px solid #ddd; background:#f7f7f7; cursor:pointer; font-weight:600; transition: all 0.2s; }
+.top-nav button:active{ background:#2563eb; color:#fff; transform: scale(0.95); }
+.top-nav button.active{ background:#2563eb; color:#fff; border-color:#2563eb; }
+.chapter-block{ padding:35px 0; border-bottom:10px solid #f5f5f5; scroll-margin-top: 70px; }
+.chapter-title{ font-size:20px; font-weight:800; margin-bottom:8px; }
+.video-box{ width:100%; aspect-ratio:16/9; background:#000; border-radius:12px; overflow:hidden; margin:12px 0; }
+.video-box video{ width:100%; height:100%; }
+.summary-simple{ background:#f0fdf4; border-left:4px solid #22c55e; padding:12px; border-radius:8px; margin:10px 0; white-space:pre-line; line-height:1.6; }
+.btn-full{ width:100%; background:#2563eb; color:#fff; border:none; padding:14px; border-radius:10px; font-weight:700; cursor:pointer; margin:10px 0; }
+.summary-detailed{ display:none; background:#eff6ff; padding:14px; border-radius:8px; line-height:1.8; white-space:pre-line; }
+.hint{ font-size:13px; color:#666; text-align:center; margin-bottom:8px; }
 </style>
 </head>
 <body>
-<div class="header"><a href="index.html">← Back</a></div>
-<div class="content" id="content">Loading...</div>
+<div class="container">
+  <h1>REDEMPTION ROAD - ELMA SHAW</h1>
+  <div class="hint">👆 Tap any number to jump fast to chapter</div>
+  <div class="top-nav" id="topNav"></div>
+  <div id="allChapters"></div>
+</div>
+
 <script>
-function toggleFull(){
-  const el=document.getElementById('fullBox');
-  const btn=document.getElementById('toggleBtn');
-  if(el.style.display==='block'){
-    el.style.display='none';
-    btn.innerHTML='📚 Click here to read FULL detailed story (For SS2 & SS3 WASSCE) ▼';
-  }else{
-    el.style.display='block';
-    btn.innerHTML='📚 Hide full story ▲';
-    el.scrollIntoView({behavior:'smooth'});
+const chaptersData = [
+  {
+    chapter: 1,
+    title: "Chapter 1 - The Memorial",
+    video: "https://res.cloudinary.com/hdnjnj1g/video/upload/v1793271463/lv_0_20261029105645_1.mp4",
+    simple: `SS1 QUICK SUMMARY:
+Bendu attends memorial for Granny May who died during war. Bendu remembers pushing Granny May in wheelbarrow, Granny May died, Bendu captured by Commander Cobra and Samson who broke her finger. She has secret about one year with fighters.`,
+    detailed: `FULL STORY CHAPTER 1 (SS2 & SS3):
+At memorial for Catherine May Tyler Lewis (Granny May) - empty casket with portrait, Bible, flag. Bendu Lewis main character last to see Granny May alive.
+
+Parents Ben and Eva left Liberia early 1990s when Charles Taylor entered Liberia. Lost property.
+
+During escape from Charlue Town, Bendu pushed sick Granny May in rusty wheelbarrow. Saw abandoned babies, children trampled. Refused to leave. Granny May said "Leave me baby. Go. Save yourself!" Died. Old man said "You did well to stay with your Ma. God will bless you."
+
+Rebels: Commander Cobra tall muscular moustache and Samson dreadlocks. Bendu not afraid, sucked teeth. They called her Congo girl Americo-Liberian. Samson broke finger with gun. Dragged away screaming, fainted, woke in woods camp.
+
+At memorial surrounded by Agnes, Tenneh, Calvin Daniels but feels alone, secret about one year with fighters, afraid family won't forgive.`
+  },
+  {
+    chapter: 2,
+    title: "Chapter 2 - In The Cause Of The People",
+    video: "",
+    simple: `SS1 QUICK SUMMARY:
+1986 Monrovia. Moses Varney rushes to Temple of Justice. Bodyguard Weah driving Pajero. Dashboard sticker "IN THE CAUSE OF THE PEOPLE, THE STRUGGLE CONTINUES". At Capitol Bypass, street boys Simeon and Alphonso shout "Brother V! Father!" Varney remembers age 11 minibus Sanniquellie to Monrovia fell into ravine parents died. Promises Simeon "I won't forget you".`,
+    detailed: `FULL STORY CHAPTER 2 (SS2 & SS3):
+1986 Monrovia. Moses Varney 45yo navy suit glasses in hurry to Temple of Justice. Weah 35yo muscular bald driving. Sticker on dashboard.
+
+At Capitol Bypass near Temple of Justice, boys Simeon & Alphonso 16yo shout Brother V! His boys.
+
+Flashback: Age 11 overloaded yellow minibus Sanniquellie to Monrovia with people, chickens, goat, pig fell into ravine parents died.
+
+Promises Simeon "I won't forget you". Knocks on big ornate door of Judiciary. Theme: No peace without justice.`
   }
+];
+
+for(let i=3; i<=34; i++){
+  chaptersData.push({
+    chapter: i,
+    title: `Chapter ${i}`,
+    video: "",
+    simple: `Chapter ${i} short summary - waiting for your text`,
+    detailed: `Chapter ${i} full story - waiting`
+  });
 }
-function getParams(){
-  const p=new URLSearchParams(window.location.search);
-  return {book:p.get('book'),chapter:parseInt(p.get('chapter'))}
+
+const topNav = document.getElementById('topNav');
+const allChapters = document.getElementById('allChapters');
+
+chaptersData.forEach(ch => {
+  const b = document.createElement('button');
+  b.innerText = ch.chapter;
+  b.id = 'nav-'+ch.chapter;
+  b.onclick = ()=> {
+    document.getElementById('chapter-'+ch.chapter).scrollIntoView({behavior:'smooth', block:'start'});
+    document.querySelectorAll('.top-nav button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+  };
+  topNav.appendChild(b);
+
+  const div = document.createElement('div');
+  div.className='chapter-block';
+  div.id='chapter-'+ch.chapter;
+  div.innerHTML=`
+    <div class="chapter-title">${ch.title}</div>
+    <div class="video-box">
+      ${ch.video ? `<video controls playsinline src="${ch.video}"></video>` : `<div style="color:#999; text-align:center; padding:60px 10px;">Chapter ${ch.chapter} video coming soon</div>`}
+    </div>
+    <div class="summary-simple">${ch.simple}</div>
+    <button class="btn-full" onclick="toggleFull('detail-${ch.chapter}', this)">📚 Click here to read FULL detailed story (SS2 & SS3) ▼</button>
+    <div class="summary-detailed" id="detail-${ch.chapter}">${ch.detailed}</div>
+  `;
+  allChapters.appendChild(div);
+});
+
+function toggleFull(id, btn){
+  const el = document.getElementById(id);
+  if(el.style.display==='block'){ el.style.display='none'; btn.innerText='📚 Click here to read FULL detailed story (SS2 & SS3) ▼'; }
+  else { el.style.display='block'; btn.innerText='📚 Hide full story ▲'; }
 }
-fetch('data/books.json')
-.then(r=>r.json())
-.then(allBooks=>{
-  const {book,chapter}=getParams();
-  const bookData=allBooks.find(b=>b.id==book);
-  const chData=bookData.chapters.find(c=>c.chapter==chapter);
-  const hasVideo=chData.video_id && chData.video_embed_url;
-  const isMp4 = chData.video_type === 'mp4' || (chData.cloudinary_url && chData.cloudinary_url.endsWith('.mp4'));
-  const videoUrl = chData.cloudinary_url || chData.video_embed_url;
-  const videoEmbed = hasVideo ? (isMp4
-  ? `<video controls playsinline><source src="${videoUrl}" type="video/mp4"></video>`
-  : `<iframe src="${chData.video_embed_url}" allowfullscreen></iframe>`)
-  : '';
-document.getElementById('content').innerHTML=
-`<div class="meta">${bookData.type} | ${bookData.author} | ${bookData.title}</div>
-<h1>${bookData.title}</h1>
-<h2>${chData.title}</h2>
-<div class="meta">Characters: ${chData.characters ? chData.characters.join(', ') : ''}</div>
-<div class="meta">Theme: ${chData.theme || ''}</div>
-${chData.setting ? `<div class="meta">Setting: ${chData.setting}</div>` : ''}
 
-<div class="summary-simple"><strong>Quick Summary (For SS1):</strong> ${chData.summary_simple}</div>
-
-<button id="toggleBtn" class="btn-full" onclick="toggleFull()">📚 Click here to read FULL detailed story (For SS2 & SS3 WASSCE) ▼</button>
-<div id="fullBox" class="summary-detailed">${chData.summary_detailed ? chData.summary_detailed : chData.summary_simple}</div>
-
-<div class="ad-box">AD SPACE 2</div>
-<h3>▶️ Video Lesson (For Everyone - SS1 to SS3)</h3>
-${hasVideo ? `<div class="video-box">${videoEmbed}</div>` : '<p>No video yet</p>'}
-<div class="ad-box">AD SPACE 3</div>
-`;
+// Auto highlight active chapter when scrolling
+window.addEventListener('scroll', ()=>{
+  chaptersData.forEach(ch=>{
+    const el = document.getElementById('chapter-'+ch.chapter);
+    const rect = el.getBoundingClientRect();
+    if(rect.top >= -100 && rect.top <= 150){
+      document.querySelectorAll('.top-nav button').forEach(x=>x.classList.remove('active'));
+      const activeBtn = document.getElementById('nav-'+ch.chapter);
+      if(activeBtn) activeBtn.classList.add('active');
+    }
+  });
 });
 </script>
 </body>
