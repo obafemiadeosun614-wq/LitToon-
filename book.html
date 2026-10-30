@@ -5,29 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redemption Road - LitToon</title>
 <style>
-html{ scroll-behavior: smooth; }
 *{ box-sizing: border-box; }
 body{ font-family: Inter, sans-serif; background:#fff; margin:0; color:#111; }
 .container{ max-width:800px; margin:0 auto; padding:15px; }
-.top-nav{ position:sticky; top:0; background:#fff; z-index:99; padding:12px 0; border-bottom:2px solid #eee; overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling: touch; }
-.top-nav::-webkit-scrollbar{ display:none; }
-.top-nav button{ margin:3px; padding:9px 15px; border-radius:20px; border:1px solid #ddd; background:#f7f7f7; cursor:pointer; font-weight:600; transition: all 0.2s; }
-.top-nav button:active{ background:#2563eb; color:#fff; transform: scale(0.95); }
-.top-nav button.active{ background:#2563eb; color:#fff; border-color:#2563eb; }
-.chapter-block{ padding:35px 0; border-bottom:10px solid #f5f5f5; scroll-margin-top: 70px; }
+.top-nav{ position:sticky; top:0; background:#fff; z-index:99; padding:10px 0; border-bottom:1px solid #eee; overflow-x:auto; white-space:nowrap; }
+.top-nav button{ margin:4px; padding:8px 14px; border-radius:20px; border:1px solid #ddd; background:#f7f7f7; }
+.chapter-block{ padding:30px 0; border-bottom:10px solid #f5f5f5; }
 .chapter-title{ font-size:20px; font-weight:800; margin-bottom:8px; }
 .video-box{ width:100%; aspect-ratio:16/9; background:#000; border-radius:12px; overflow:hidden; margin:12px 0; }
 .video-box video{ width:100%; height:100%; }
 .summary-simple{ background:#f0fdf4; border-left:4px solid #22c55e; padding:12px; border-radius:8px; margin:10px 0; white-space:pre-line; line-height:1.6; }
 .btn-full{ width:100%; background:#2563eb; color:#fff; border:none; padding:14px; border-radius:10px; font-weight:700; cursor:pointer; margin:10px 0; }
 .summary-detailed{ display:none; background:#eff6ff; padding:14px; border-radius:8px; line-height:1.8; white-space:pre-line; }
-.hint{ font-size:13px; color:#666; text-align:center; margin-bottom:8px; }
 </style>
 </head>
 <body>
 <div class="container">
   <h1>REDEMPTION ROAD - ELMA SHAW</h1>
-  <div class="hint">👆 Tap any number to jump fast to chapter</div>
   <div class="top-nav" id="topNav"></div>
   <div id="allChapters"></div>
 </div>
@@ -38,33 +32,48 @@ const chaptersData = [
     chapter: 1,
     title: "Chapter 1 - The Memorial",
     video: "https://res.cloudinary.com/hdnjnj1g/video/upload/v1793271463/lv_0_20261029105645_1.mp4",
-    simple: `SS1 QUICK SUMMARY:
-Bendu attends memorial for Granny May who died during war. Bendu remembers pushing Granny May in wheelbarrow, Granny May died, Bendu captured by Commander Cobra and Samson who broke her finger. She has secret about one year with fighters.`,
-    detailed: `FULL STORY CHAPTER 1 (SS2 & SS3):
-At memorial for Catherine May Tyler Lewis (Granny May) - empty casket with portrait, Bible, flag. Bendu Lewis main character last to see Granny May alive.
+    simple: `SS1 QUICK SUMMARY (For JSS/SS1):
+Bendu Lewis attends memorial service for her grandmother Granny May who died during war. Bendu remembers pushing Granny May in wheelbarrow during escape from Charlue Town. Granny May died on the road. Bendu was captured by rebels Commander Cobra and Samson who broke her finger. She spent one year with them. She has a secret she is afraid to tell her family.`,
+    detailed: `FULL STORY CHAPTER 1 (For SS2 & SS3 WASSCE):
 
-Parents Ben and Eva left Liberia early 1990s when Charles Taylor entered Liberia. Lost property.
+The chapter begins at a memorial service for Catherine May Tyler Lewis (Granny May). She died almost ten years ago during Liberian civil war and her body was never found. Family holds service with empty casket containing her portrait, Bible, family pictures, picture of husband Samuel Lewis II, white rose and Liberian flag.
 
-During escape from Charlue Town, Bendu pushed sick Granny May in rusty wheelbarrow. Saw abandoned babies, children trampled. Refused to leave. Granny May said "Leave me baby. Go. Save yourself!" Died. Old man said "You did well to stay with your Ma. God will bless you."
+Main character is Bendu Lewis, Granny May's granddaughter. She is in pain because she was last person to see grandmother alive.
 
-Rebels: Commander Cobra tall muscular moustache and Samson dreadlocks. Bendu not afraid, sucked teeth. They called her Congo girl Americo-Liberian. Samson broke finger with gun. Dragged away screaming, fainted, woke in woods camp.
+Bendu's parents Ben and Eva Lewis left Liberia early 1990s when Charles Taylor entered Liberia to fight President Samuel K. Doe. After nine years of war Taylor became President. They lost property and returned from America for memorial. They stay with daughter Siatta and husband Terrance Clarke.
 
-At memorial surrounded by Agnes, Tenneh, Calvin Daniels but feels alone, secret about one year with fighters, afraid family won't forgive.`
+During war, Bendu pushed sick Granny May in dirty rusty wheelbarrow escaping Charlue Town. People shouted leave old woman and run. She saw abandoned babies crying, children trampled, old sick people left behind. She refused to leave. Hands blistered, legs sore. Granny May whispered "Leave me baby. Go. Save yourself!" Bendu refused. Granny May's body went limp and died. Old man told Bendu "You did well to stay with your Ma. God will bless you."
+
+Immediately after, about thirty rebel fighters appeared. Not official army. Some wore wigs, some very young boys. Leaders: Commander Cobra - tall muscular man with moustache - and Samson - man with dreadlocks.
+
+Bendu tired of war, wanted to die to join late fiancé Jonah in heaven. Not afraid, even sucked teeth at them. Samson wanted to hit her, Commander Cobra stopped him.
+
+They asked name, she said "Bendu Lewis". They called her "Congo girl" and "Americo-Liberian". Cobra surprised she speaks local dialect. She learned at University of Liberia.
+
+Fighters laughed for carrying dead body and ordered follow them. Bendu held wheelbarrow and refused. Samson hit finger hard with gun until it broke with crack. Men dragged her away screaming. She fainted from pain, hunger, shock. Woke up dark, fighters setting up camp in woods.
+
+Ends back at memorial service. Bendu surrounded by family and friends from peace education center like Agnes, Tenneh, Calvin Daniels. But feels alone. Has secret about one year spent with fighters, afraid family will not understand or forgive. She cannot forget war even though others say "forget it" and "let bygones be bygones".
+
+Characters: Bendu Lewis, Granny May, Benjamin and Eva Lewis, Commander Cobra and Samson.
+Theme: Love, loss, trauma, survival.`
   },
   {
     chapter: 2,
     title: "Chapter 2 - In The Cause Of The People",
-    video: "",
+    video: "", // paste your Chapter 2 Cloudinary link here when ready
     simple: `SS1 QUICK SUMMARY:
-1986 Monrovia. Moses Varney rushes to Temple of Justice. Bodyguard Weah driving Pajero. Dashboard sticker "IN THE CAUSE OF THE PEOPLE, THE STRUGGLE CONTINUES". At Capitol Bypass, street boys Simeon and Alphonso shout "Brother V! Father!" Varney remembers age 11 minibus Sanniquellie to Monrovia fell into ravine parents died. Promises Simeon "I won't forget you".`,
-    detailed: `FULL STORY CHAPTER 2 (SS2 & SS3):
-1986 Monrovia. Moses Varney 45yo navy suit glasses in hurry to Temple of Justice. Weah 35yo muscular bald driving. Sticker on dashboard.
+1986, Monrovia. Moses Varney rushes to Temple of Justice. Bodyguard Weah driving his Pajero. Dashboard has sticker "IN THE CAUSE OF THE PEOPLE, THE STRUGGLE CONTINUES" from 1980 coup. At Capitol Bypass, street boys Simeon and Alphonso shout "Brother V! Father!" Varney remembers age 11, overloaded minibus from Sanniquellie to Monrovia fell into ravine, parents died. He promises Simeon "I won't forget you". He believes no peace without justice.`,
+    detailed: `FULL STORY CHAPTER 2 (For SS2 & SS3 WASSCE):
 
-At Capitol Bypass near Temple of Justice, boys Simeon & Alphonso 16yo shout Brother V! His boys.
+Scene 1-2: 1986 Monrovia. Moses Varney 45yo in navy suit, dark skin, glasses, in hurry. Lives at stake. Must get to Temple of Justice. Bodyguard Weah 35yo muscular bald driving. Dashboard sticker "IN THE CAUSE OF THE PEOPLE THE STRUGGLE CONTINUES" reminds of 1980 coup.
 
-Flashback: Age 11 overloaded yellow minibus Sanniquellie to Monrovia with people, chickens, goat, pig fell into ravine parents died.
+Scene 3: At Capitol Bypass near Temple of Justice, street boys Simeon & Alphonso 16yo slim, faded t-shirts, barefoot, shout Brother V! Father! His boys.
 
-Promises Simeon "I won't forget you". Knocks on big ornate door of Judiciary. Theme: No peace without justice.`
+Scene 4: Looking at them Varney flashback - Age 11. Overloaded yellow minibus Sanniquellie to Monrovia with people, farm produce, chickens, goat, pig. Fell into ravine. Parents died.
+
+Scene 5: He promises Simeon "I won't forget you". Knocks on big ornate door of Judiciary. Theme: Justice is foundation of peace.
+
+WASSCE Question: Why does Varney care about street boys? Because he was orphaned young and knows pain of being abandoned.`
   }
 ];
 
@@ -73,8 +82,8 @@ for(let i=3; i<=34; i++){
     chapter: i,
     title: `Chapter ${i}`,
     video: "",
-    simple: `Chapter ${i} short summary - waiting for your text`,
-    detailed: `Chapter ${i} full story - waiting`
+    simple: `Chapter ${i} short summary (SS1) - waiting for your novel text. When you send Chapter ${i} book, we will write short + long together.`,
+    detailed: `Chapter ${i} full story (SS2 & SS3) - waiting.`
   });
 }
 
@@ -84,14 +93,8 @@ const allChapters = document.getElementById('allChapters');
 chaptersData.forEach(ch => {
   const b = document.createElement('button');
   b.innerText = ch.chapter;
-  b.id = 'nav-'+ch.chapter;
-  b.onclick = ()=> {
-    document.getElementById('chapter-'+ch.chapter).scrollIntoView({behavior:'smooth', block:'start'});
-    document.querySelectorAll('.top-nav button').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-  };
+  b.onclick = ()=> document.getElementById('chapter-'+ch.chapter).scrollIntoView({behavior:'smooth'});
   topNav.appendChild(b);
-
   const div = document.createElement('div');
   div.className='chapter-block';
   div.id='chapter-'+ch.chapter;
@@ -112,19 +115,6 @@ function toggleFull(id, btn){
   if(el.style.display==='block'){ el.style.display='none'; btn.innerText='📚 Click here to read FULL detailed story (SS2 & SS3) ▼'; }
   else { el.style.display='block'; btn.innerText='📚 Hide full story ▲'; }
 }
-
-// Auto highlight active chapter when scrolling
-window.addEventListener('scroll', ()=>{
-  chaptersData.forEach(ch=>{
-    const el = document.getElementById('chapter-'+ch.chapter);
-    const rect = el.getBoundingClientRect();
-    if(rect.top >= -100 && rect.top <= 150){
-      document.querySelectorAll('.top-nav button').forEach(x=>x.classList.remove('active'));
-      const activeBtn = document.getElementById('nav-'+ch.chapter);
-      if(activeBtn) activeBtn.classList.add('active');
-    }
-  });
-});
 </script>
 </body>
 </html>
